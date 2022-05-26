@@ -59,3 +59,5 @@ Advanced CSS selectors (Links to an external site.)
 Wireframes
 
 Link to site: https://chrisnewbold.github.io/02-Advanced-CSS-Chris-Newbold-Portfolio/
+
+![My Screen Shot](https://raw.githubusercontent.com/ChrisNewbold/02-Advanced-CSS-Chris-Newbold-Portfolio/main/Assets/images/My%20Portfolio.png)
