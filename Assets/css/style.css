@@ -378,6 +378,7 @@ main {
     height: 200px;
   }
 }
+/* this is all the css for the footer */
 .footer-container {
   background-color: var(--blue);
   padding: 4rem 0 4rem 0;
@@ -439,7 +440,7 @@ main {
   background-color: var(--yellow);
   transition: all 0.4s ease-out;
 }
-/* footer media */
+/* site media */
 @media screen and (max-width: 992px) {
   .footer {
     height: 50vh;

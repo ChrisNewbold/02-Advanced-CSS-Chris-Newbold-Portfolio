@@ -32,4 +32,30 @@ Use advanced CSS styling for an enhanced UI.
 
 Resolve a merge conflict that results from a git pull.
 
+# Key Topics
+
+Media queries (Links to an external site.)
+
+Flexbox (Links to an external site.)
+
+Responsive design (Links to an external site.)
+
+CSS resets (Links to an external site.)
+
+Pseudo-classes (Links to an external site.)
+
+Pseudo-elements (Links to an external site.)
+
+Transitions (Links to an external site.)
+
+Typography (Links to an external site.)
+
+CSS variables (Links to an external site.)
+
+Advanced box styling (Links to an external site.)
+
+Advanced CSS selectors (Links to an external site.)
+
+Wireframes
+
 Link to site: https://chrisnewbold.github.io/02-Advanced-CSS-Chris-Newbold-Portfolio/
