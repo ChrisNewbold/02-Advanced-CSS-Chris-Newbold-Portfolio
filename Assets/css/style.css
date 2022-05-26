@@ -42,23 +42,6 @@ h2:after {
 .new-box {
   display: flex;
   gap: 30px;
-  /* }
-
-.portfolio {
-  flex: 4;
-  display: flex;
-  flex-wrap: wrap;
-  display: inline-block;
-  position: relative;
-  flex-direction: row; */
-  /* }
-.portfolio-group {
-  flex: 4;
-  display: flex;
-  flex-wrap: wrap;
-  display: inline-block;
-  position: relative;
-  flex-direction: row; */
 }
 /* portfolio tile 1 hover effect */
 .portfolio::after {
@@ -138,7 +121,7 @@ header::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 10px;
 }
