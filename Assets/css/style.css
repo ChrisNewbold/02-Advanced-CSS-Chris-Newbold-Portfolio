@@ -263,6 +263,9 @@ main {
 .card-body {
   color: #fff;
 }
+#card-justification {
+  text-align: left;
+}
 .card-title::after {
   content: "";
   position: absolute;
