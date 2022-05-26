@@ -2,18 +2,21 @@
 html {
   height: 100%;
 }
+/* core site colours */
 :root {
   --white: white;
   --blue: #315e7f;
   --yellow: #ffc44a;
   --border-radius: 50px;
 }
+/* About me flex column class */
 .flex-two-columns {
   display: flex;
   margin: 5px;
   background-color: var(--yellow);
   border-radius: 0.5rem;
 }
+/* h2 heading styles */
 h2 {
   position: relative;
   text-align: center;
@@ -37,29 +40,22 @@ h2:after {
 *::after {
   box-sizing: border-box;
 }
-/* portfolio display settings */
+/* portfolio display class */
 
 .new-box {
   display: flex;
+  justify-content: center;
   gap: 30px;
+  align-items: center;
 }
-/* portfolio tile 1 hover effect */
-.portfolio::after {
-  content: "";
-  position: absolute;
-}
-.portfolio:hover {
-  transform: scale(1.01);
-  box-shadow: 6px 6px 30px 8px #b1b1b1;
-}
-/* portfolio tile 1 */
+/* portfolio tile 1 class */
 .p1 {
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
   transition: transform 500ms ease;
 }
-/* portfolio tile 1 hover effect */
+/* portfolio tile 1 hover effect class */
 .p1::after {
   content: "";
   position: absolute;
@@ -68,31 +64,60 @@ h2:after {
   transform: scale(1.01);
   box-shadow: 6px 6px 30px 8px #b1b1b1;
 }
-/* portfolio tile 2 */
+/* portfolio tile 2 class */
 .p2 {
   height: 100%;
   width: 100%;
   border-radius: 0.3rem;
 }
-/* portfolio tile 3 */
+/* portfolio tile 1 hover effect class */
+.p2::after {
+  content: "";
+  position: absolute;
+}
+.p2:hover {
+  transform: scale(1.01);
+  box-shadow: 6px 6px 30px 8px #b1b1b1;
+}
+/* portfolio tile 3 class */
 .p3 {
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
 }
-/* portfolio tile 4 */
+/* portfolio tile 1 hover effect class */
+.p3::after {
+  content: "";
+  position: absolute;
+}
+.p3:hover {
+  transform: scale(1.01);
+  box-shadow: 6px 6px 30px 8px #b1b1b1;
+}
+/* portfolio tile 4 class */
 .p4 {
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
 }
-
+/* portfolio tile 1 hover effect class */
+.p4::after {
+  content: "";
+  position: absolute;
+}
+.p4:hover {
+  transform: scale(1.01);
+  box-shadow: 6px 6px 30px 8px #b1b1b1;
+}
+/* h3 heading style */
 h3 {
   text-align: center;
 }
+/* paragraph heading style */
 p {
   text-align: center;
 }
+/* body font style */
 body {
   margin: 0;
   font-family: "Barlow Condensed", sans-serif;
@@ -100,7 +125,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* header background color */
+/* header background color style */
 header {
   background: var(--blue);
   height: auto;
