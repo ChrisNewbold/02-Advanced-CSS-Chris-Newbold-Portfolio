@@ -9,6 +9,218 @@ html {
   --yellow: #ffc44a;
   --border-radius: 50px;
 }
+/* Universal before after selectors */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* header background color style */
+header {
+  background: var(--blue);
+  height: auto;
+}
+/* header after effects */
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* logo location and color */
+.logo {
+  float: left;
+  color: var(--white);
+}
+/* top navigation */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li:not(:first-child) {
+  margin-left: 8px;
+}
+
+nav li {
+  display: inline-block;
+  position: relative;
+  padding-top: 10px;
+  margin: 10px;
+}
+
+nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* nav bar hover effect color */
+nav ul li a:hover {
+  color: var(--yellow);
+}
+
+nav ul li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: var(--yellow);
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+/* nav list over style */
+nav ul li a:hover::before {
+  width: 100%;
+}
+/* This dictates the size of the hero image, space on the bottom, the image link, the image size and position we have the background size set to cover to make it as large as it can be while remaining centered */
+.hero {
+  height: 700px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("../images/Hero\ Image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+/* main section style */
+main {
+  padding: 40px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* body font style */
+body {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.welcome-paragraph {
+  text-align: center;
+  margin: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* profile picture specs */
+.profile-image {
+  height: 700px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("../images/Chris-Newbold-Profile-Picture.jpg");
+  background-size: cover;
+  background-position: center;
+}
+/* did you know card build */
+.card {
+  color: var(--white);
+  background-image: url("../images/Chris-Newbold-Profile-Picture.jpg");
+  background-size: cover;
+  padding: 4rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+/* this is dictating how much it expands when the mouse is hovered over it */
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+}
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  /* this is dictating the gradient that comes over the card */
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.7) 20%,
+    hsl(0 0% 0% / 10)
+  );
+}
+.card-title {
+  position: relative;
+  padding-bottom: 20px;
+  width: max-content;
+}
+/* did you know section body color fade in */
+.card-body {
+  color: #fff;
+}
+#card-justification {
+  text-align: left;
+}
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: calc(var(--padding) * -1);
+  bottom: -2px;
+  width: calc(100% + var(--padding));
+  background: var(--yellow);
+  transform-origin: left;
+  transition: left;
+}
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+/* fun fact media section this also assists in turning off the transitions and effects */
+@media (hover) {
+  .card-content {
+    transform: translateY(65%);
+    transition: transform 500ms ease;
+  }
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+  .card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+  .card:hover .card-content > *:not(.card-title),
+  .card:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+  }
+  .card-title::after {
+    transform: scaleX(0);
+  }
+}
+/* This is the fun fact button */
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background-color: var(--yellow);
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+}
+.button:hover,
+.button:focus {
+  background-color: var(--white);
+  color: black;
+}
 /* About me flex column class */
 .flex-two-columns {
   display: flex;
@@ -35,13 +247,7 @@ h2:after {
   background-color: #315e7f;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 /* portfolio display class */
-
 .new-box {
   display: flex;
   justify-content: center;
@@ -117,211 +323,6 @@ h3 {
 p {
   text-align: center;
 }
-/* body font style */
-body {
-  margin: 0;
-  font-family: "Barlow Condensed", sans-serif;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-/* header background color style */
-header {
-  background: var(--blue);
-  height: auto;
-}
-
-header::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* logo location and color */
-.logo {
-  float: left;
-  color: var(--white);
-}
-/* top navigation */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  padding: 10px;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav li:not(:first-child) {
-  margin-left: 8px;
-}
-
-nav li {
-  display: inline-block;
-  position: relative;
-  padding-top: 10px;
-  margin: 10px;
-}
-
-nav ul li a {
-  color: var(--white);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
-}
-/* nav bar hover effect color */
-nav ul li a:hover {
-  color: var(--yellow);
-}
-
-nav ul li a::before {
-  content: "";
-  display: block;
-  height: 5px;
-  width: 100%;
-  background-color: var(--yellow);
-  position: absolute;
-  top: 0;
-  width: 0%;
-  transition: all ease-in-out 250ms;
-}
-
-nav ul li a:hover::before {
-  width: 100%;
-}
-/* This dictates the size of the hero image, space on the bottom, the image link, the image size and position we have the background size set to cover to make it as large as it can be while remaining centered */
-.hero {
-  height: 700px;
-  width: 100%;
-  margin-bottom: 25px;
-  background-image: url("../images/Hero\ Image.jpg");
-  background-size: cover;
-  background-position: center;
-}
-/* main section style */
-main {
-  padding: 40px;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.welcome-paragraph {
-  text-align: center;
-  margin: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-/* profile picture specs */
-.profile-image {
-  height: 700px;
-  width: 100%;
-  margin-bottom: 25px;
-  background-image: url("../images/Chris-Newbold-Profile-Picture.jpg");
-  background-size: cover;
-  background-position: center;
-}
-/* did you know card build */
-.card {
-  color: var(--white);
-  background-image: url("../images/Chris-Newbold-Profile-Picture.jpg");
-  background-size: cover;
-  padding: 4rem 0 0;
-  max-width: 35ch;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  transition: transform 500ms ease;
-}
-/* this is dictating how much it expands when the mouse is hovered over it */
-.card:hover,
-.card:focus-within {
-  transform: scale(1.05);
-}
-.card-content {
-  --padding: 1.5rem;
-  padding: var(--padding);
-  /* this is dictating the gradient that comes over the card */
-  background: linear-gradient(
-    hsl(0 0% 0% / 0),
-    hsl(20 0% 0% / 0.7) 20%,
-    hsl(0 0% 0% / 10)
-  );
-}
-.card-title {
-  position: relative;
-  padding-bottom: 20px;
-  width: max-content;
-}
-/* did you know body color fade in */
-.card-body {
-  color: #fff;
-}
-#card-justification {
-  text-align: left;
-}
-.card-title::after {
-  content: "";
-  position: absolute;
-  height: 4px;
-  left: calc(var(--padding) * -1);
-  bottom: -2px;
-  width: calc(100% + var(--padding));
-  background: var(--yellow);
-  transform-origin: left;
-  transition: left;
-}
-.card:hover .card-title::after,
-.card:focus-within .card-title::after {
-  transform: scaleX(1);
-}
-/* fun fact media section this also assists in turning off the transitions and effects */
-@media (hover) {
-  .card-content {
-    transform: translateY(65%);
-    transition: transform 500ms ease;
-  }
-  .card:hover .card-content,
-  .card:focus-within .card-content {
-    transform: translateY(0);
-    transition-delay: 500ms;
-  }
-  .card:focus-within .card-content {
-    transition-duration: 0ms;
-  }
-  .card-content > *:not(.card-title) {
-    opacity: 0;
-    transition: opacity 500ms linear;
-  }
-  .card:hover .card-content > *:not(.card-title),
-  .card:focus-within .card-content > *:not(.card-title) {
-    opacity: 1;
-    transition-delay: 1000ms;
-  }
-  .card-title::after {
-    transform: scaleX(0);
-  }
-}
-/* This is the fun fact button */
-.button {
-  cursor: pointer;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-  background-color: var(--yellow);
-  padding: 0.5em 1.25em;
-  border-radius: 0.25em;
-}
-.button:hover,
-.button:focus {
-  background-color: var(--white);
-  color: black;
-}
 /* this is the contact us section */
 .contact-container {
   position: relative;
@@ -395,8 +396,15 @@ main {
 .btn:hover {
   background-color: #ffc44a;
 }
-/* contact us media */
-@media screen and (max-width: 992px) {
+
+  .hero {
+    height: 700px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../images/Hero\ Image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
   .contact-box {
     grid-template-columns: 1fr;
   }
@@ -468,6 +476,19 @@ main {
 }
 /* site media */
 @media screen and (max-width: 992px) {
+  .hero {
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../images/Hero\ Image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    height: 200px;
+  }
   .footer {
     height: 50vh;
   }
@@ -476,6 +497,33 @@ main {
   }
 }
 @media screen and (max-width: 768px) {
+  header,
+  main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero {
+    width: auto;
+    margin-bottom: 25px;
+    background-image: url("../images/Hero\ Image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .nav-container {
+    flex-direction: column;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+  main {
+    padding-right: 20;
+  }
+
+  .flex-two-columns {
+    flex-direction: column;
+    align-items: center;
+  }
   .footer {
     padding-top: 2rem;
   }
@@ -484,6 +532,13 @@ main {
   }
 }
 @media screen and (max-width: 375px) {
+  .hero {
+    width: auto;
+    margin-bottom: 25px;
+    background-image: url("../images/Hero\ Image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
   .footer-3 {
     display: none;
   }
@@ -505,26 +560,4 @@ main {
     transition-delay: 0ms !important;
   }
 }
-@media screen and (max-width: 768px) {
-  header,
-  main {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .nav-container {
-    flex-direction: column;
-  }
-  .logo {
-    margin-bottom: 0;
-  }
-  main {
-    padding-right: 20;
-  }
-
-  .flex-two-columns {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+/* end of CSS thank you for viewing */
