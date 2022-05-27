@@ -70,7 +70,7 @@ h2:after {
   width: 100%;
   border-radius: 0.3rem;
 }
-/* portfolio tile 1 hover effect class */
+/* portfolio tile 2 hover effect class */
 .p2::after {
   content: "";
   position: absolute;
@@ -85,7 +85,7 @@ h2:after {
   width: 100%;
   border-radius: 0.5rem;
 }
-/* portfolio tile 1 hover effect class */
+/* portfolio tile 3 hover effect class */
 .p3::after {
   content: "";
   position: absolute;
@@ -100,7 +100,7 @@ h2:after {
   width: 100%;
   border-radius: 0.5rem;
 }
-/* portfolio tile 1 hover effect class */
+/* portfolio tile 4 hover effect class */
 .p4::after {
   content: "";
   position: absolute;
@@ -113,7 +113,7 @@ h2:after {
 h3 {
   text-align: center;
 }
-/* paragraph heading style */
+/* paragraph style */
 p {
   text-align: center;
 }
@@ -204,11 +204,9 @@ nav ul li a:hover::before {
   background-size: cover;
   background-position: center;
 }
-.section-one {
-  background-color: beige;
-}
+/* main section style */
 main {
-  padding: 30px;
+  padding: 40px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
