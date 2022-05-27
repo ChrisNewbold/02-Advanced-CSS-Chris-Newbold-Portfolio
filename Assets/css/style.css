@@ -506,7 +506,7 @@ p {
   .footer {
     padding-top: 2rem;
   }
-  .new-box {
+  .portfolio-box {
     flex-direction: column;
   }
 }
