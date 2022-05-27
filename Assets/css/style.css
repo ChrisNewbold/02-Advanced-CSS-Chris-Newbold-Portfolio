@@ -88,7 +88,7 @@ nav ul li a:hover::before {
 }
 /* This dictates the size of the hero image, space on the bottom, the image link, the image size and position we have the background size set to cover to make it as large as it can be while remaining centered */
 .hero {
-  height: 700px;
+  height: 50vh;
   width: 100%;
   margin-bottom: 25px;
   background-image: url("../images/Hero\ Image.jpg");
@@ -248,7 +248,7 @@ h2:after {
 }
 
 /* portfolio display class */
-.new-box {
+.portfolio-box {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -261,11 +261,12 @@ h2:after {
   border-radius: 0.5rem;
   transition: transform 500ms ease;
 }
-/* portfolio tile 1 hover effect class */
+/* portfolio tile 1 position class */
 .p1::after {
   content: "";
   position: absolute;
 }
+/* p1 hover effect transition and shadow */
 .p1:hover {
   transform: scale(1.01);
   box-shadow: 6px 6px 30px 8px #b1b1b1;
@@ -467,13 +468,6 @@ p {
 }
 /* site media */
 @media screen and (max-width: 992px) {
-  .hero {
-    width: 100%;
-    margin-bottom: 25px;
-    background-image: url("../images/Hero\ Image.jpg");
-    background-size: cover;
-    background-position: center;
-  }
   .contact-box {
     grid-template-columns: 1fr;
   }
@@ -494,13 +488,7 @@ p {
     align-items: center;
     text-align: center;
   }
-  .hero {
-    width: auto;
-    margin-bottom: 25px;
-    background-image: url("../images/Hero\ Image.jpg");
-    background-size: cover;
-    background-position: center;
-  }
+
   .nav-container {
     flex-direction: column;
   }
@@ -523,13 +511,6 @@ p {
   }
 }
 @media screen and (max-width: 375px) {
-  .hero {
-    width: auto;
-    margin-bottom: 25px;
-    background-image: url("../images/Hero\ Image.jpg");
-    background-size: cover;
-    background-position: center;
-  }
   .footer-3 {
     display: none;
   }
